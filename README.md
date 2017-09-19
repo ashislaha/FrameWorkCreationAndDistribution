@@ -21,6 +21,8 @@ At runtime, only a single copy of the library code is shared among all processes
 
 ---------------------------------------------------------------------
 
+BUILDING FRAMEWORK :-
+
 You need a way to package a static library and it's header into a single component which you can add in your project and use it immediately.
 
 What is a framework ?
