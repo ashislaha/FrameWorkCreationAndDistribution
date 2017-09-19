@@ -29,4 +29,36 @@ What is a framework ?
 
 A framework is a collection of resources . It collects a static library and it’s header files into a single structure that Xcode can easily incorporate into your projects.
 
+----------------------------------------------------------------------
+******* Creating a static library ***** 
+----------------------------------------------------------------------
+
+A static library projects consists of 2 files : (1) Header file , (2) Implementation file . Lets say : “MathOpeartionsLibrary” project name.
+
+It creates (1) MathOpeartionsLibrary.h and (2) MathOpeartionsLibrary.m . 
+Let's we are adding the following in "MathOpeartionsLibrary.h" :
+
+#import <UIKit/UIKit.h>
+
+This is adding umbrella header of “UIKit” , but Xcode static library project does not link against it by default. So add “UIKit” as a dependency. 
+
+Select Project —> Choose Target —> Build Phases —> Link Binary with libraries —> Search (UIKit) —> Add 
+
+----------------------------------------------------------------------
+ADD A NEW PHASE IN THE BUILD : 
+----------------------------------------------------------------------
+
+Phase will collect the public header files and put them somewhere accessible to the compiler.  Later you will copy these into the framework.
+
+Select Project —> Targets —> Editor —> Add build phase —> Add Copy Headers Build Phase 
+
+Headers consists of  3 sections : (1) Public (2) Private (3) Project
+
+Drag the “MathOpeartionsLibrary.h” file into “public” section. 
+
+
+
+
+
+
 
