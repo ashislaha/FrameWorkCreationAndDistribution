@@ -112,8 +112,7 @@ create a "TestFramework" project.
 <b> Project Inspector --> General --> Embedded Binaries --> click on + button --> Click on "Add other" --> Choose "ALModalStatus.xcodeproj"
 
 Click on "+" button again in Embedded Binaries, you will get options for "ALModalStatus" framework. Add it.
-Now you can use this framework.
-<b>
+Now you can use this framework. </b>
 
 <img width="512" alt="screen shot 2018-03-05 at 8 55 32 pm" src="https://user-images.githubusercontent.com/10649284/36985399-2fd01e1a-20bd-11e8-9708-889384d017c0.png">
 
