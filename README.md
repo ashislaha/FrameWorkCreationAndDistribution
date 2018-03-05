@@ -3,58 +3,156 @@
 Let's discuss about how to create a framework and distribute the framwork 
 so that you can import it and use it in other projects.
 
-BASIC CONCEPTS :
+### BASIC CONCEPTS :
 
 The act of linking libraries is a form of code dependency management. When any app is run, its executable code is loaded into memory. Additionally, any code libraries that it depends on are also loaded into memory. 
 
 There are two type of linking: static, and dynamic. Both offer different benefits to the developer and should be used according to these benefits.
 
-Statically linked Library/framework  : 
+### Statically linked Library/framework  : 
 
 Unlike dynamic, linking static libraries includes the object file code from the library into the target's binary. This results in a larger size on disk and slower launch times. Because the library's code is added directly to the linked target's binary, it means that to update any code in the library, the linked target would also have to be rebuilt.
 
-Dynamically linked framework : 
+### Dynamically linked framework : 
 
 Dynamic linking is most commonly used on OS X and iOS. When dynamic libraries are linked, none of the library's code is included directly into the linked target. Instead, the libraries are loaded into memory at runtime prior to having symbols getting resolved. Because the code isn't statically linked into the executable binary, there are some benefits from loading at runtime.
 
 At runtime, only a single copy of the library code is shared among all processes who are using it. Thus ii’s reducing the memory usages and improves the performances.
 
----------------------------------------------------------------------
-
-BUILDING FRAMEWORK :-
+### BUILDING FRAMEWORK :-
 
 You need a way to package a static library and it's header into a single component which you can add in your project and use it immediately.
 
-What is a framework ?
+## What is a framework ?
 
-A framework is a collection of resources . It collects a static library and it’s header files into a single structure that Xcode can easily incorporate into your projects.
+A framework is modular and reusable set of code that is used as a building blocks of high level piece of software. 
 
-----------------------------------------------------------------------
-******* Creating a static library ***** 
-----------------------------------------------------------------------
+<b> The best reason to use framework: Build once and use infinite number of times. </b>
 
-A static library projects consists of 2 files : (1) Header file , (2) Implementation file . Lets say : “MathOpeartionsLibrary” project name.
+## Let's create a FrameWork:
 
-It creates (1) MathOpeartionsLibrary.h and (2) MathOpeartionsLibrary.m . 
-Let's we are adding the following in "MathOpeartionsLibrary.h" :
+Just for sake of simplicity I am creating a simple UIView component inside a framework (ALModalStatus) and using in another project (TestFramework).
 
-#import <UIKit/UIKit.h>
+The "ALModalStatusView" consists of Image, Title and Description.
 
-This is adding umbrella header of “UIKit” , but Xcode static library project does not link against it by default. So add “UIKit” as a dependency. 
+### STEP 1: Create a Cocoa Touch Framework: 
 
-Select Project —> Choose Target —> Build Phases —> Link Binary with libraries —> Search (UIKit) —> Add 
+let's name it "ALModalStatus".
 
-----------------------------------------------------------------------
-ADD A NEW PHASE IN THE BUILD : 
-----------------------------------------------------------------------
+<img width="512" alt="screen shot 2018-03-05 at 9 21 11 pm" src="https://user-images.githubusercontent.com/10649284/36985401-2ffb7218-20bd-11e8-852c-26ff6f25310f.png">
 
-Phase will collect the public header files and put them somewhere accessible to the compiler.  Later you will copy these into the framework.
 
-Select Project —> Targets —> Editor —> Add build phase —> Add Copy Headers Build Phase 
+### STEP 2: Create ALModalStatusView with XIB:
 
-Headers consists of  3 sections : (1) Public (2) Private (3) Project
+    import UIKit
+    public class ALModalStatusView: UIView {
 
-Drag the “MathOpeartionsLibrary.h” file into “public” section. 
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    
+    private let nibName = "ALModalStatusView"
+    var contentView: UIView!
+    
+    // MARK: Set up views
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+        setupView()
+    }
+    
+    private func setupView() {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        contentView = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        addSubview(contentView)
+        
+        contentView.center = center
+        contentView.autoresizingMask = []
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        titleLabel.text = ""
+        descriptionLabel.text = ""
+    }
+    
+    // Allow view to control itself
+    public override func layoutSubviews() {
+        // Rounded corners
+        layoutIfNeeded()
+        contentView.layer.masksToBounds = true
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 10
+    }
+    
+    // MARK: update UI
+    public func set(image: UIImage) {
+        imageView.image = image
+    }
+    
+    public func set(title: String) {
+        titleLabel.text = title
+    }
+    
+    public func set(description: String) {
+        descriptionLabel.text = description
+    }
+}
+
+build the project.
+
+### STEP 3: Create a test Project to use ALModalStatusView.
+
+create a "TestFramework" project.
+
+### STEP 4: Add framework in the test project.
+
+<b> Project Inspector --> General --> Embedded Binaries --> click on + button --> Click on "Add other" --> Choose "ALModalStatus.xcodeproj"
+
+Click on "+" button again in Embedded Binaries, you will get options for "ALModalStatus" framework. Add it.
+Now you can use this framework.
+<b>
+
+<img width="512" alt="screen shot 2018-03-05 at 8 55 32 pm" src="https://user-images.githubusercontent.com/10649284/36985399-2fd01e1a-20bd-11e8-9708-889384d017c0.png">
+
+### After adding the framework: 
+
+<img width="512" alt="screen shot 2018-03-05 at 9 26 07 pm" src="https://user-images.githubusercontent.com/10649284/36985403-302aa59c-20bd-11e8-8f08-1aa618dafd1d.png">
+
+### STEP 5: Use of ALModalStatus framework in test project:
+
+    import UIKit
+    import ALModalStatus
+
+    class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .black
+    }
+
+    @IBAction func showStatusViewTapped(_ sender: UIButton) {
+        
+        let modalView = ALModalStatusView(frame: view.bounds)
+        modalView.set(image: #imageLiteral(resourceName: "select"))
+        modalView.set(title: "Hi I am Header")
+        modalView.set(description: "Provide some description")
+        view.addSubview(modalView)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            modalView.removeFromSuperview()
+        }
+      }
+    }
+
+### Output: 
+
+![simulator screen shot - iphone 8 plus - 2018-03-05 at 21 10 11](https://user-images.githubusercontent.com/10649284/36985404-3056d842-20bd-11e8-94e3-0e8366de86e7.png)
+
+
+![simulator screen shot - iphone 8 plus - 2018-03-05 at 21 10 14](https://user-images.githubusercontent.com/10649284/36985407-31ab14ce-20bd-11e8-8cd7-40c3ecc53adb.png)
 
 
 
