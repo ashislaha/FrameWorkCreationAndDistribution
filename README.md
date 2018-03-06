@@ -117,7 +117,12 @@ create a "TestFramework" project.
 <b> Project Inspector --> General --> Embedded Binaries --> click on + button --> Click on "Add other" --> Choose "ALModalStatus.xcodeproj"
 
 Click on "+" button again in Embedded Binaries, you will get options for "ALModalStatus" framework. Add it.
-Now you can use this framework. </b>
+Now you can use this framework. 
+
+<img width="456" alt="screen shot 2018-03-06 at 8 36 44 am" src="https://user-images.githubusercontent.com/10649284/37012217-a76a8882-2119-11e8-80c1-ee717a27da5f.png">
+
+For ease of use, You can copy the "ALModalStatus.framework" to some other place like Desktop/Documents and use it instead of adding the entire "ALModalStatus.xcodeproj" file.
+</b>
 
 <img width="512" alt="screen shot 2018-03-05 at 8 55 32 pm" src="https://user-images.githubusercontent.com/10649284/36985399-2fd01e1a-20bd-11e8-9708-889384d017c0.png">
 
@@ -157,6 +162,8 @@ Now you can use this framework. </b>
 
 
 ![simulator screen shot - iphone 8 plus - 2018-03-05 at 21 10 14](https://user-images.githubusercontent.com/10649284/36985407-31ab14ce-20bd-11e8-8cd7-40c3ecc53adb.png)
+
+## What's next? Framework distribution using CocoaPods:
 
 
 
