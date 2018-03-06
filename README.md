@@ -41,8 +41,13 @@ let's name it "ALModalStatus".
 
 <img width="512" alt="screen shot 2018-03-05 at 9 21 11 pm" src="https://user-images.githubusercontent.com/10649284/36985401-2ffb7218-20bd-11e8-852c-26ff6f25310f.png">
 
+### STEP 2: Change the build configuration to release mode of your framework
 
-### STEP 2: Create ALModalStatusView with XIB:
+Product --> Scheme --> Edit Scheme --> Build configuration --> (move from debug to release)
+
+<img width="640" alt="screen shot 2018-03-06 at 8 27 04 am" src="https://user-images.githubusercontent.com/10649284/37012069-c8c138ba-2118-11e8-9a08-5f1f0d698ce2.png">
+
+### STEP 3: Create ALModalStatusView with XIB:
 
     import UIKit
     public class ALModalStatusView: UIView {
@@ -103,11 +108,11 @@ let's name it "ALModalStatus".
 
 build the project.
 
-### STEP 3: Create a test Project to use ALModalStatusView.
+### STEP 4: Create a test Project to use ALModalStatusView.
 
 create a "TestFramework" project.
 
-### STEP 4: Add framework in the test project.
+### STEP 5: Add framework in the test project.
 
 <b> Project Inspector --> General --> Embedded Binaries --> click on + button --> Click on "Add other" --> Choose "ALModalStatus.xcodeproj"
 
@@ -120,7 +125,7 @@ Now you can use this framework. </b>
 
 <img width="512" alt="screen shot 2018-03-05 at 9 26 07 pm" src="https://user-images.githubusercontent.com/10649284/36985403-302aa59c-20bd-11e8-8f08-1aa618dafd1d.png">
 
-### STEP 5: Use of ALModalStatus framework in test project:
+### STEP 6: Use of ALModalStatus framework in test project:
 
     import UIKit
     import ALModalStatus
@@ -146,7 +151,7 @@ Now you can use this framework. </b>
       }
     }
 
-### Output: 
+### 7: Output: 
 
 ![simulator screen shot - iphone 8 plus - 2018-03-05 at 21 10 11](https://user-images.githubusercontent.com/10649284/36985404-3056d842-20bd-11e8-94e3-0e8366de86e7.png)
 
