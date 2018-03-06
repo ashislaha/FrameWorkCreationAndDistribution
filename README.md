@@ -124,11 +124,9 @@ Now you can use this framework.
 For ease of use, You can copy the "ALModalStatus.framework" to some other place like Desktop/Documents and use it instead of adding the entire "ALModalStatus.xcodeproj" file.
 </b>
 
-<img width="512" alt="screen shot 2018-03-05 at 8 55 32 pm" src="https://user-images.githubusercontent.com/10649284/36985399-2fd01e1a-20bd-11e8-9708-889384d017c0.png">
-
 ### After adding the framework: 
 
-<img width="512" alt="screen shot 2018-03-05 at 9 26 07 pm" src="https://user-images.githubusercontent.com/10649284/36985403-302aa59c-20bd-11e8-8f08-1aa618dafd1d.png">
+<img width="640" alt="screen shot 2018-03-06 at 8 45 28 am" src="https://user-images.githubusercontent.com/10649284/37012468-d32f80ca-211a-11e8-90df-d320f2eb502c.png">
 
 ### STEP 6: Use of ALModalStatus framework in test project:
 
