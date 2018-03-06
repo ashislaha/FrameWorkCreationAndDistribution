@@ -1,0 +1,11 @@
+framework module ALModalStatus {
+  umbrella header "ALModalStatus.h"
+
+  export *
+  module * { export * }
+}
+
+module ALModalStatus.Swift {
+    header "ALModalStatus-Swift.h"
+    requires objc
+}

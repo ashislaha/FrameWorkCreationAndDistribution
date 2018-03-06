@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		804567F1204D990C00568EAD /* ALModalStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F9A297204D9724003B52C0 /* ALModalStatus.framework */; };
-		804567F2204D990C00568EAD /* ALModalStatus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80F9A297204D9724003B52C0 /* ALModalStatus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80EA0D22204E68AC00CA8DB0 /* ALModalStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA0D21204E68AC00CA8DB0 /* ALModalStatus.framework */; };
+		80EA0D23204E68AC00CA8DB0 /* ALModalStatus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA0D21204E68AC00CA8DB0 /* ALModalStatus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80F9A280204D96E6003B52C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9A27F204D96E6003B52C0 /* AppDelegate.swift */; };
 		80F9A282204D96E6003B52C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9A281204D96E6003B52C0 /* ViewController.swift */; };
 		80F9A285204D96E6003B52C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F9A283204D96E6003B52C0 /* Main.storyboard */; };
@@ -16,31 +16,14 @@
 		80F9A28A204D96E6003B52C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F9A288204D96E6003B52C0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		804567F3204D990C00568EAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80F9A292204D9724003B52C0 /* ALModalStatus.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 80F9A263204D886D003B52C0;
-			remoteInfo = ALModalStatus;
-		};
-		80F9A296204D9724003B52C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80F9A292204D9724003B52C0 /* ALModalStatus.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 80F9A264204D886D003B52C0;
-			remoteInfo = ALModalStatus;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		804567F5204D990C00568EAD /* Embed Frameworks */ = {
+		80EA0D16204E67AD00CA8DB0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				804567F2204D990C00568EAD /* ALModalStatus.framework in Embed Frameworks */,
+				80EA0D23204E68AC00CA8DB0 /* ALModalStatus.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80EA0D21204E68AC00CA8DB0 /* ALModalStatus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALModalStatus.framework; sourceTree = "<group>"; };
 		80F9A27C204D96E6003B52C0 /* TestFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F9A27F204D96E6003B52C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F9A281204D96E6003B52C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +39,6 @@
 		80F9A286204D96E6003B52C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80F9A289204D96E6003B52C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80F9A28B204D96E6003B52C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80F9A292204D9724003B52C0 /* ALModalStatus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ALModalStatus.xcodeproj; path = ../ALModalStatus/ALModalStatus.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804567F1204D990C00568EAD /* ALModalStatus.framework in Frameworks */,
+				80EA0D22204E68AC00CA8DB0 /* ALModalStatus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +56,7 @@
 		80F9A273204D96E5003B52C0 = {
 			isa = PBXGroup;
 			children = (
-				80F9A292204D9724003B52C0 /* ALModalStatus.xcodeproj */,
+				80EA0D21204E68AC00CA8DB0 /* ALModalStatus.framework */,
 				80F9A27E204D96E6003B52C0 /* TestFramework */,
 				80F9A27D204D96E6003B52C0 /* Products */,
 			);
@@ -108,14 +91,6 @@
 			path = others;
 			sourceTree = "<group>";
 		};
-		80F9A293204D9724003B52C0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				80F9A297204D9724003B52C0 /* ALModalStatus.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,12 +101,11 @@
 				80F9A278204D96E6003B52C0 /* Sources */,
 				80F9A279204D96E6003B52C0 /* Frameworks */,
 				80F9A27A204D96E6003B52C0 /* Resources */,
-				804567F5204D990C00568EAD /* Embed Frameworks */,
+				80EA0D16204E67AD00CA8DB0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				804567F4204D990C00568EAD /* PBXTargetDependency */,
 			);
 			name = TestFramework;
 			productName = TestFramework;
@@ -165,28 +139,12 @@
 			mainGroup = 80F9A273204D96E5003B52C0;
 			productRefGroup = 80F9A27D204D96E6003B52C0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 80F9A293204D9724003B52C0 /* Products */;
-					ProjectRef = 80F9A292204D9724003B52C0 /* ALModalStatus.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				80F9A27B204D96E6003B52C0 /* TestFramework */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		80F9A297204D9724003B52C0 /* ALModalStatus.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ALModalStatus.framework;
-			remoteRef = 80F9A296204D9724003B52C0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		80F9A27A204D96E6003B52C0 /* Resources */ = {
@@ -212,14 +170,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		804567F4204D990C00568EAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ALModalStatus;
-			targetProxy = 804567F3204D990C00568EAD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		80F9A283204D96E6003B52C0 /* Main.storyboard */ = {
@@ -355,6 +305,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87F557PJ6U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TestFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashislaha.TestFramework;
@@ -371,6 +325,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87F557PJ6U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TestFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashislaha.TestFramework;
